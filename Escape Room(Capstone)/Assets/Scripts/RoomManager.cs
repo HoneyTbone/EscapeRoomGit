@@ -8,14 +8,15 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour
 {
     public bool levelComplete;
+    public GameObject door;
     PuzzleManager puzzleManager;
 
 
     // Awake is called before the first frame update
     void Awake()
     {
+        door.SetActive(true);
         puzzleManager = GameObject.FindGameObjectWithTag("PuzzleManager").GetComponent<PuzzleManager>();
-        levelComplete = false;
     }
 
     // Update is called once per frame
@@ -29,7 +30,8 @@ public class RoomManager : MonoBehaviour
 
     void nextLevel()
     {
-        Debug.Log("level complete");
         levelComplete = false;
+        door.SetActive(false);
+        Debug.Log("level complete");
     }
 }

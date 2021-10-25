@@ -8,23 +8,54 @@ using UnityEngine;
 
 public class PuzzleManager : MonoBehaviour
 {
-    
     RoomManager roomManager;
+
     // All puzzles added to a boolean array
-    static public bool button, password;
-    bool[] puzzles = new bool[2] {button,password};
+    bool button, password;
+    public bool runTest;
+    //bool[] puzzles = new bool[];
+    //List<bool> puzzles = new List<bool>();
+    public Dictionary<string, bool> puzzles = new Dictionary<string, bool>();
+    bool rtn;
     
 
     // Awake is called before the first frame update
     void Awake()
     {
         roomManager = GameObject.FindGameObjectWithTag("RoomManager").GetComponent <RoomManager>();
+
+        puzzles.Add("button",button);
+        //puzzles.Add("password",password);
+        //Debug.Log(puzzles["button"]);    
     }
 
     // Update is called once per frame 
     void FixedUpdate()
     {
-        //Debug.Log(puzzles);
+       if(runTest==true)
+        {
+            Debug.Log("RunTest");
+            runTest = false;
+            IsPuzzlesComplete(puzzles);
+        }
+    }
+
+    bool IsPuzzlesComplete(Dictionary<string,bool> theDictionary)
+    {
+        bool result = true;
+        button = true;
+        foreach (KeyValuePair<string,bool> item in puzzles)
+        {
+            result = result && item.Value;
+        }
+        if (result == true)
+        {
+            roomManager.levelComplete = true;
+        }        
+        rtn = result;
+        Debug.Log("result is " + result);
+        return result;
+        
        
     }
 }
