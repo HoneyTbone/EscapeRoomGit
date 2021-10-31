@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RoomManager
   - PuzzleManager
+  - ButtonObject
   layers:
   - Default
   - TransparentFX

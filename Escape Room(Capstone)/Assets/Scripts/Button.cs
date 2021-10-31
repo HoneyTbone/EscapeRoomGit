@@ -19,12 +19,19 @@ public class Button : MonoBehaviour
         if(completed==true)
         {
             isComplete();
+        } 
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "ButtonObject")
+        {
+            completed = true;
         }
     }
 
     void isComplete()
     {
-        Debug.Log("Completed");
         puzzleManager.puzzles["button"] = true;
         puzzleManager.runTest = true;
         completed = false;
