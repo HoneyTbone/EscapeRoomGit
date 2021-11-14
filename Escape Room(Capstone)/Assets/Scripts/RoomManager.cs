@@ -8,14 +8,16 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour
 {
     public bool levelComplete;
-    public GameObject door;
+    public GameObject doorClosed;
+    public GameObject doorOpen;
     PuzzleManager puzzleManager;
 
 
     // Awake is called before the first frame update
     void Awake()
     {
-        door.SetActive(true);
+        doorClosed.SetActive(true);
+        doorOpen.SetActive(false);
         puzzleManager = GameObject.FindGameObjectWithTag("PuzzleManager").GetComponent<PuzzleManager>();
     }
 
@@ -31,7 +33,8 @@ public class RoomManager : MonoBehaviour
     void nextLevel()
     {
         levelComplete = false;
-        door.SetActive(false);
+        doorOpen.SetActive(true);
+        doorClosed.SetActive(false);
         Debug.Log("level complete");
     }
 }
