@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9072782510288636018}
   - component: {fileID: 9072782510288635981}
   - component: {fileID: 9072782510288635980}
-  - component: {fileID: 9072782510288636017}
+  - component: {fileID: 5641911304723003684}
   m_Layer: 6
   m_Name: ButtonObject
   m_TagString: ButtonObject
@@ -113,7 +113,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!114 &9072782510288636017
+--- !u!114 &5641911304723003684
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9072782510288635983}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6745ae189ece96b429fa1c1450b0a3db, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}

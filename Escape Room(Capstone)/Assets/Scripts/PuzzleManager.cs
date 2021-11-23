@@ -11,7 +11,7 @@ public class PuzzleManager : MonoBehaviour
     RoomManager roomManager;
 
     // All puzzles added to a boolean array
-    bool button, password;
+    bool button, code;
     public bool runTest;
     //bool[] puzzles = new bool[];
     //List<bool> puzzles = new List<bool>();
@@ -25,6 +25,7 @@ public class PuzzleManager : MonoBehaviour
         roomManager = GameObject.FindGameObjectWithTag("RoomManager").GetComponent <RoomManager>();
 
         puzzles.Add("button",button);
+        puzzles.Add("code", code);
         //puzzles.Add("password",password);
         //Debug.Log(puzzles["button"]);    
     }
