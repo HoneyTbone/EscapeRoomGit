@@ -27,6 +27,7 @@ public class Button : MonoBehaviour
         if (collision.collider.tag == "ButtonObject")
         {
             completed = true;
+            Destroy(collision.gameObject);
         }
     }
 
