@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
+
 
 public class Shelf : MonoBehaviour
 {
     PuzzleManager puzzleManager;
     SocketChecker socketChecker;
+
 
     void Awake()
     {
@@ -16,16 +17,16 @@ public class Shelf : MonoBehaviour
 
     void Update()
     {
-        if(socketChecker.done == true)
-        {
-            isComplete();
-        }
+
     }
 
-    void isComplete()
+    public void isComplete()
     {
-        puzzleManager.puzzles["shelf"] = true;
-        puzzleManager.runTest = true;
+        if (socketChecker.done == true)
+        {
+            puzzleManager.puzzles["shelf"] = true;
+            puzzleManager.runTest = true;
+        }   
     }
 
 
