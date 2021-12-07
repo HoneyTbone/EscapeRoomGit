@@ -7,6 +7,7 @@ public class AssetFlip : MonoBehaviour
     public GameObject unused;
     public GameObject used;
     public bool smashable = false;
+    public bool vaultLock = false;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,14 @@ public class AssetFlip : MonoBehaviour
         unused.gameObject.SetActive(true);
     }
 
+    private void Update()
+    {
+        if (vaultLock == true)
+        {
+            activateObject();
+            vaultLock = false;
+        }
+    }
     public void activateObject()
     {
         used.gameObject.SetActive(true);

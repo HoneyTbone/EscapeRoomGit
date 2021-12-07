@@ -8,6 +8,14 @@ TagManager:
   - PuzzleManager
   - ButtonObject
   - Bullet
+  - SocketChecker
+  - Wall
+  - Vault
+  - SocketKey
+  - Key
+  - Chest
+  - Coffee
+  - SocketCoffee
   layers:
   - Default
   - TransparentFX

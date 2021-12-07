@@ -5,36 +5,36 @@ using UnityEngine;
 public class Button : MonoBehaviour
 {
     PuzzleManager puzzleManager;
-    public bool completed;
+    SocketChecker socketChecker;
+    public int checkingForTrophy = 1;
 
     // Start is called before the first frame update
     void Awake()
     {
         puzzleManager = GameObject.FindGameObjectWithTag("PuzzleManager").GetComponent<PuzzleManager>();
+        socketChecker = GameObject.FindGameObjectWithTag("SocketChecker").GetComponent<SocketChecker>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(completed==true)
+        if (checkingForTrophy == 1)
         {
-            isComplete();
-        } 
+            {
+                if (socketChecker.completed == true)
+                {
+                    isComplete();
+                    checkingForTrophy = 0;
+                }
+            }
+        }
+
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag == "ButtonObject")
-        {
-            completed = true;
-            Destroy(collision.gameObject);
-        }
-    }
 
     void isComplete()
     {
         puzzleManager.puzzles["button"] = true;
         puzzleManager.runTest = true;
-        completed = false;
     }
 }
